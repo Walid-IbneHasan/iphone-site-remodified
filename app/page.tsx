@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero";
-import Highlights from "@/components/Highlights";
-import My3DScene from "@/components/Model";
+import Hero from "@/app/components/Hero";
+import Highlights from "@/app/components/Highlights";
+import My3DScene from "@/app/components/Model";
 
 export default function Home() {
   return (
