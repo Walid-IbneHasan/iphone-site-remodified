@@ -9,7 +9,7 @@ export function MyModel(props: React.GroupProps) {
 
   return (
     <group {...props} dispose={null}>
-      {/* Replace these with your actual node and material names */}
+     
       <mesh
         castShadow
         receiveShadow

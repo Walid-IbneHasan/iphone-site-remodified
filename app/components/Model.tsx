@@ -1,14 +1,100 @@
 "use client";
-import React from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { MyModel } from "./ModelView";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
-export default function My3DScene() {
+const colorButton = [
+  {
+    color: "blue",
+    value: "blue",
+  },
+  {
+    color: "red",
+    value: "red",
+  },
+  {
+    color: "green",
+    value: "green",
+  },
+];
+
+const Computers = () => {
+  const computer = useGLTF("./desktop_pc/free_iphone_13_pro_2021.glb");
+
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      <MyModel />
-    </Canvas>
+    <mesh>
+      <hemisphereLight intensity={0.15} groundColor="black" />
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      />
+      <pointLight intensity={1} />
+      <ambientLight intensity={1} />
+      <primitive
+        object={computer.scene}
+        scale={2}
+        position={[0, 0, -1.5]}
+        rotation={[-0.01, -0.2, -0.1]}
+      />
+    </mesh>
   );
-}
+};
+
+const My3DScene = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      "#threeD-text",
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: "#threeD",
+        },
+        stagger: 0.5,
+      }
+    );
+  });
+  return (
+    <div
+      className="py-16 h-full flex flex-col items-center gap-16 "
+      id="threeD"
+    >
+      <div className="flex w-full  justify-evenly">
+        <div className="text-[#86868B] text-5xl" id="threeD-text">
+          Enjoy
+        </div>
+        <div className="text-[#86868B] text-5xl " id="threeD-text">
+          iPhone 15 Pro Max
+        </div>
+      </div>
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={null}>
+          <OrbitControls
+            enableZoom
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers />
+        </Suspense>
+
+        <Preload all />
+      </Canvas>
+    </div>
+  );
+};
+
+export default My3DScene;
