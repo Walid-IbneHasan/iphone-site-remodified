@@ -55,7 +55,7 @@ export default function Explore() {
         y: 0,
         duration: 2,
 
-        scrollTrigger: { trigger: "#explore-section" },
+        scrollTrigger: { trigger: "#video-explore" },
       }
     );
     gsap.fromTo(
@@ -66,18 +66,21 @@ export default function Explore() {
         y: 0,
         duration: 2,
 
-        scrollTrigger: { trigger: "#explore-section" },
+        scrollTrigger: { trigger: "#video-explore" },
       }
     );
   });
 
   return (
     <div id="explore-section" className="w-4/6 mx-auto py-16">
-      <h1 className="text-[#86868B] text-7xl " id="explore-header">
+      <h1
+        className="text-[#86868B] text-5xl text-center lg:text-start lg:text-7xl "
+        id="explore-header"
+      >
         Explore the full story
       </h1>
       <div className="w-5/6 mx-auto">
-        <p className="text-white text-5xl mt-12" id="explore-para">
+        <p className="text-white text-xl  lg:text-5xl mt-12" id="explore-para">
           iPhone <br />
           Forged in titanium
         </p>
@@ -85,7 +88,7 @@ export default function Explore() {
           <video id="video-explore" ref={videoRef}>
             <source src="/assets/videos/explore.mp4" type="video/mp4" />
           </video>
-          <div className="flex gap-2">
+          <div className="flex flex-col xl:flex-row gap-2">
             <Image
               src="/assets/pictures/explore1.jpg"
               alt="explore-pic-1"
@@ -100,7 +103,7 @@ export default function Explore() {
             />
           </div>
           <div
-            className="flex gap-32 text-[#86868B] text-2xl mt-12"
+            className="flex flex-col lg:flex-row gap-16 lg:gap-32 text-[#86868B] text-2xl mt-12"
             id="explore-text-div"
           >
             <p id="explore-text">

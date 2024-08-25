@@ -64,10 +64,10 @@ const My3DScene = () => {
   });
   return (
     <div
-      className="py-16 h-full flex flex-col items-center gap-16 "
+      className="py-16 h-full flex flex-col items-center gap-16 bg-[rgba(150,109,109,0.1)] "
       id="threeD"
     >
-      <div className="flex w-full  justify-evenly">
+      <div className="flex flex-col lg:flex-row gap-4 text-center lg:text-start w-full  lg:justify-evenly">
         <div className="text-[#86868B] text-5xl" id="threeD-text">
           Enjoy
         </div>

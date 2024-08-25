@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VideoCarousal from "./VideoCarousal";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Highlights() {
@@ -38,19 +39,19 @@ export default function Highlights() {
     );
   });
   return (
-    <section className="h-screen bg-[#101010]" id="highlights  ">
-      <div className="flex justify-evenly py-8">
-        <p className="text-[#86868B] text-5xl" id="highlight-text">
+    <section className="lg:h-screen bg-[#101010]" id="highlights">
+      <div className="flex flex-col px-4 gap-4 lg:flex-row lg:justify-evenly py-8">
+        <p className="text-[#86868B] text-3xl lg:text-5xl" id="highlight-text">
           Get the highlights
         </p>
         <div className="flex gap-4" id="watch-text">
-          <p className="hover:underline text-sky-600 flex gap-1 items-center text-xl">
+          <p className="hover:underline text-sky-600 flex lg:gap-1 items-center text-lg lg:text-xl">
             Watch the film{" "}
             <span>
               <FaRegCirclePlay color="sky-blue" size={25} />
             </span>{" "}
           </p>
-          <p className="hover:underline text-sky-600 flex gap-1 items-center text-xl">
+          <p className="hover:underline text-sky-600 flex gap-1 items-center text-lg lg:text-xl">
             Watch the event{" "}
             <span>
               <MdKeyboardArrowRight color="sky-blue" size={25} />

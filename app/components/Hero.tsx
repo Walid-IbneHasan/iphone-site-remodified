@@ -15,7 +15,7 @@ export default function Hero() {
     );
   });
   return (
-    <div className="flex flex-col items-center justify-center h-screen relative">
+    <div className="flex flex-col items-center lg:justify-center py-32 lg:py-0 lg:h-screen relative">
       <p id="hero-text" className="text-[#86868B] text-3xl">
         iPhone 15 Pro
       </p>

@@ -44,7 +44,7 @@ export default function Chip() {
         y: 0,
         duration: 2,
         stagger: 0.5,
-        scrollTrigger: { trigger: "#chip-section" },
+        scrollTrigger: { trigger: "#video-chip" },
       }
     );
     gsap.fromTo(
@@ -72,12 +72,12 @@ export default function Chip() {
       </div>
       <div className="flex flex-col items-center justify-center">
         <p
-          className="text-white text-7xl text-center mt-16 mb-8"
+          className="text-white text-5xl lg:text-7xl text-center mt-16 mb-8"
           id="chip-header"
         >
           A17 Pro Chip. <br />A monster win for gaming{" "}
         </p>
-        <p className="text-[#86868B] text-3xl" id="chip-header">
+        <p className="text-[#86868B] text-xl lg:text-3xl" id="chip-header">
           It&apos;s here. The biggest redesign in the history of Apple
           GPU&apos;s
         </p>
@@ -92,7 +92,7 @@ export default function Chip() {
           <source src="/assets/videos/frame.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="grid grid-cols-2 justify-items-end w-4/6 mx-auto mt-16 ">
+      <div className="grid pb-8 lg:pb-0 grid-cols-1 gap-4 lg:grid-cols-2 justify-items-end w-4/6 mx-auto mt-16 ">
         <p className="text-[#86868B] text-xl" id="chip-text">
           A17 Pro is an entirely new class of iPhone chip that delivers our{" "}
           <span className="text-white">best graphics performance by far.</span>{" "}
